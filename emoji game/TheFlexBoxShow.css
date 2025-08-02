@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body, html {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+#vibe-container {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #0f0f0f, #1f1f2e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: background 1s ease;
+}
+#instructions {
+  color: white;
+  font-size: 22px;
+  position: absolute;
+  top: 30px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 10px 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 12px rgba(255,255,255,0.2);
+}
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  pointer-events: none;
+  animation: pop 1.2s ease forwards;
+  transform: scale(0.5);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+@keyframes pop {
+  0% {
+    opacity: 1;
+    transform: scale(0.4);
+  }
+  80% {
+    transform: scale(2);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
