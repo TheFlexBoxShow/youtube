@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Infinity Room</title>
+  <link rel="stylesheet" href="TheFlexBoxShow.css" />
+</head>
+<body>
+  <div class="infinity-room">
+    <div class="tunnel" id="tunnel">
+      <div class="layer layer1"></div>
+      <div class="layer layer2"></div>
+      <div class="layer layer3"></div>
+      <div class="layer layer4"></div>
+      <div class="layer layer5"></div>
+      <div class="layer layer6"></div>
+    </div>
+    <div class="glow"></div>
+
+    <button id="toggleBtn" class="start-btn">Start</button>
+  </div>
+
+  <script>
+    const tunnel = document.getElementById("tunnel");
+    const toggleBtn = document.getElementById("toggleBtn");
+
+    let isRotating = false;
+
+    toggleBtn.onclick = () => {
+      if (isRotating) {
+        // Pause animation by freezing current transform
+        const computedStyle = window.getComputedStyle(tunnel);
+        const matrix = computedStyle.getPropertyValue('transform');
+        tunnel.style.animation = "none";
+        tunnel.style.transform = matrix;
+        toggleBtn.textContent = "Start";
+      } else {
+        // Restart smooth rotation
+        tunnel.style.animation = "rotateRoomSmooth 16s linear infinite";
+        toggleBtn.textContent = "Stop";
+      }
+      isRotating = !isRotating;
+    };
+  </script>
+</body>
+</html>
