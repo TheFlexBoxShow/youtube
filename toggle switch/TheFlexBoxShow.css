@@ -1,0 +1,110 @@
+:root {
+  --metal-light: linear-gradient(145deg, #d7d7d7, #f0f0f0);
+  --metal-dark: linear-gradient(145deg, #3a3a3a, #2a2a2a);
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-dark: rgba(0, 0, 0, 0.6);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  transition: background 0.5s, color 0.5s;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+body.light {
+  background: #f0f0f0;
+  color: #1a1a1a;
+}
+body.dark {
+  background: #1a1a1a;
+  color: #f0f0f0;
+}
+.container {
+  text-align: center;
+  padding: 80px 20px;
+}
+.toggle-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.metal-switch {
+  position: relative;
+  width: 120px;
+  height: 60px;
+  background: linear-gradient(145deg, #bcbcbc, #e6e6e6);
+  border-radius: 50px;
+  box-shadow:
+    inset -6px -6px 10px #ffffffcc,
+    inset 6px 6px 12px #a3a3a3,
+    0 8px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  backdrop-filter: blur(3px);
+}
+body.dark .metal-switch {
+  background: linear-gradient(145deg, #2d2d2d, #4b4b4b);
+  box-shadow:
+    inset -4px -4px 8px #4f4f4f,
+    inset 4px 4px 10px #000000,
+    0 4px 10px rgba(0, 0, 0, 0.7);
+}
+.icon {
+  font-size: 22px;
+  color: #777;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.sun {
+  margin-left: 5px;
+}
+.moon {
+  margin-right: 5px;
+}
+#theme-toggle:not(:checked) + .metal-switch .sun {
+  opacity: 1;
+}
+#theme-toggle:checked + .metal-switch .moon {
+  opacity: 1;
+}
+body.dark .icon {
+  color: #ccc;
+}
+.metal-switch .ball {
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #e2e2e2, #b5b5b5);
+  box-shadow:
+    inset -3px -3px 5px #ffffffaa,
+    inset 3px 3px 5px #7e7e7e,
+    0 2px 6px rgba(0, 0, 0, 0.5);
+  transition: left 0.4s ease, background 0.4s ease;
+}
+body.dark .metal-switch .ball {
+  background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
+  box-shadow:
+    inset -2px -2px 5px #555,
+    inset 3px 3px 6px #000,
+    0 2px 8px rgba(0, 0, 0, 0.7);
+}
+#theme-toggle {
+  display: none;
+}
+#theme-toggle:checked + .metal-switch .ball {
+  left: 90px;
+}
