@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle at center, #1e1e1e, #000);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+h1 {
+    position: absolute;
+    top: 20px;
+    font-size: 2rem;
+    text-shadow: 0 0 10px #ff0080;
+}
+
+.splash {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fade 1s ease-out forwards;
+}
+
+@keyframes fade {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
