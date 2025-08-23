@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cool Calculator</title>
+
+  <!-- Orbitron font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Your styles -->
+  <link rel="stylesheet" href="TheFlexBoxShow.css" />
+</head>
+<body>
+  <div class="calculator">
+    <div id="display" class="display">0</div>
+
+    <div class="buttons">
+      <!-- top row -->
+      <button class="btn" id="clear">C</button>
+      <button class="btn" id="backspace">⌫</button>
+      <button class="btn operator" data-op="÷">&divide;</button>
+      <button class="btn operator" data-op="×">&times;</button>
+
+      <!-- 7 8 9 and multiply -->
+      <button class="btn" data-num="7">7</button>
+      <button class="btn" data-num="8">8</button>
+      <button class="btn" data-num="9">9</button>
+      <button class="btn operator" data-op="-">&minus;</button>
+
+      <!-- 4 5 6 and plus -->
+      <button class="btn" data-num="4">4</button>
+      <button class="btn" data-num="5">5</button>
+      <button class="btn" data-num="6">6</button>
+      <button class="btn operator" data-op="+">+</button>
+
+      <!-- 1 2 3 and equals -->
+      <button class="btn" data-num="1">1</button>
+      <button class="btn" data-num="2">2</button>
+      <button class="btn" data-num="3">3</button>
+      <button class="btn equal" id="equals">=</button>
+
+      <!-- 0 and dot -->
+      <button class="btn zero" data-num="0">0</button>
+      <button class="btn" data-num=".">.</button>
+    </div>
+  </div>
+
+  <!-- Your script -->
+  <script src="script.js"></script>
+</body>
+</html>
