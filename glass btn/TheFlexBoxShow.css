@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #2c3e50, #000);
+  font-family: "Segoe UI", sans-serif;
+}
+.center {
+  text-align: center;
+}
+.glass-btn {
+  position: relative;
+  padding: 18px 70px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  box-shadow: 
+    inset 2px 2px 8px rgba(255,255,255,0.35),
+    inset -3px -3px 10px rgba(0,0,0,0.6),
+    0 12px 30px rgba(0,0,0,0.55);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.glass-btn::before {
+  content: "";
+  position: absolute;
+  top: var(--y, 50%);
+  left: var(--x, 50%);
+  width: 200px;
+  height: 200px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle at center,
+      rgba(255,255,255,0.9) 0%,
+      rgba(255,255,255,0.2) 40%,
+      transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: top 0.15s ease, left 0.15s ease;
+  opacity: 0.6;
+  filter: blur(8px);
+}
+.glass-btn::after {
+  content: "";
+  position: absolute;
+  top: -120%;
+  left: -120%;
+  width: 250%;
+  height: 250%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.7) 0%,
+    rgba(255,255,255,0.15) 25%,
+    transparent 60%
+  );
+  transform: rotate(20deg);
+  opacity: 0;
+}
+.glass-btn:hover {
+  transform: scale(1.07);
+  box-shadow: 
+    inset 2px 2px 10px rgba(255,255,255,0.4),
+    inset -3px -3px 12px rgba(0,0,0,0.6),
+    0 18px 40px rgba(0,0,0,0.65);
+}
+.glass-btn:hover::after {
+  opacity: 1;
+  animation: shine-move 1.3s forwards;
+}
+@keyframes shine-move {
+  from { transform: translateX(-100%) rotate(20deg); }
+  to   { transform: translateX(100%) rotate(20deg); }
+}

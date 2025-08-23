@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Realistic Glass Button</title>
+  <link rel="stylesheet" href="TheFlexBoxShow.css">
+</head>
+<body>
+  <div class="center">
+    <button class="glass-btn">Click Me</button>
+  </div>
+
+  <script>
+    const btn = document.querySelector(".glass-btn");
+
+    btn.addEventListener("mousemove", (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      btn.style.setProperty("--x", `${x}px`);
+      btn.style.setProperty("--y", `${y}px`);
+    });
+
+    btn.addEventListener("mouseleave", () => {
+      btn.style.setProperty("--x", `50%`);
+      btn.style.setProperty("--y", `50%`);
+    });
+  </script>
+</body>
+</html>
