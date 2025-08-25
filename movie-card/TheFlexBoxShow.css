@@ -1,0 +1,86 @@
+body {
+margin: 0;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+background: #0a0a0f;
+font-family: "Poppins", sans-serif;
+overflow: hidden;
+}
+.movie-card {
+position: relative;
+width: 200px;
+height: 270px;
+border-radius: 18px;
+overflow: hidden;
+background: #111;
+border: 2px solid rgba(0, 255, 255, 0.2);
+box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+transform-style: preserve-3d;
+transition: transform 0.8s cubic-bezier(.25,.8,.25,1),
+box-shadow 0.8s cubic-bezier(.25,.8,.25,1),
+border 0.8s cubic-bezier(.25,.8,.25,1);
+cursor: pointer;
+}
+.movie-card img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: transform 1s ease;
+}
+.movie-card::after {
+content: "";
+position: absolute;
+top: 0;
+left: -75%;
+width: 50%;
+height: 100%;
+background: linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,0.45),
+transparent
+);
+transform: skewX(-25deg);
+}
+.movie-card:hover::after {
+animation: shimmer 1.2s forwards;
+}
+.movie-card:hover {
+transform: perspective(900px) rotateY(10deg) rotateX(5deg) scale(1.02);
+border: 2px solid rgba(0, 255, 255, 0.5);
+box-shadow: 0 0 35px rgba(0,255,200,0.5), 0 0 60px rgba(0,255,200,0.25);
+}
+.movie-card:hover img {
+transform: scale(1.12);
+}
+.info {
+position: absolute;
+bottom: 0;
+width: 100%;
+padding: 5px 0;
+background: rgba(0,0,0,0.6);
+backdrop-filter: blur(8px);
+text-align: center;
+color: #00ffe7;
+transform: translateY(100%);
+transition: transform 0.5s ease-in-out;
+}
+.movie-card:hover .info {
+transform: translateY(0);
+}
+.info h3 {
+margin: 0;
+font-size: 1rem;
+font-weight: 600;
+letter-spacing: 1px;
+}
+.info span {
+font-size: 0.8rem;
+opacity: 0.85;
+}
+@keyframes shimmer {
+0% { left: -75%; }
+100% { left: 125%; }
+}
