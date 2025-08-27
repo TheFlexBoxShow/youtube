@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at center, #0a0a0a, #000);
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+.scene {
+  perspective: 1200px;
+}
+.card {
+  position: relative;
+  width: 280px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 255, 234, 0.2);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.7),
+    inset 0 0 20px rgba(0, 255, 234, 0.25),
+    0 0 15px rgba(0, 255, 234, 0.4);
+  transition: transform 0.25s ease;
+  overflow: hidden;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+.card h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #00ffe7;
+  text-shadow: 0 0 8px #00ffe7;
+}
+.card p {
+  font-size: 0.9rem;
+  margin: 12px 0 18px;
+  color: #d9d9d9;
+}
+.card button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  background: linear-gradient(135deg, #00ffe7, #ff00cc);
+  color: #0f0f0f;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255,0,200,0.4);
+}
+.card button:hover {
+  transform: scale(1.1) translateZ(10px);
+  box-shadow: 0 8px 20px rgba(0,255,234,0.6), 0 8px 20px rgba(255,0,200,0.5);
+}
+.shine {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  transition: background 0.2s ease;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Neon Glass Card</title>
+  <link rel="stylesheet" href="TheFlexBoxShow.css">
+</head>
+<body>
+  <div class="scene">
+    <div class="card">
+      <div class="shine"></div>
+      <h2>TheFlexBoxShow</h2>
+      <p>Step into a futuristic world full of technologies.</p>
+      <button>Explore</button>
+    </div>
+  </div>
+
+  <script>
+    const card = document.querySelector('.card');
+    const shine = document.querySelector('.shine');
+    const scene = document.querySelector('.scene');
+
+    scene.addEventListener('mousemove', (e) => {
+      let rect = scene.getBoundingClientRect();
+      let x = e.clientX - rect.left;
+      let y = e.clientY - rect.top;
+
+      let rotateX = ((y / rect.height) - 0.5) * 30;
+      let rotateY = ((x / rect.width) - 0.5) * -30;
+
+      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(40px)`;
+
+      shine.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.5), transparent 70%)`;
+    });
+
+    scene.addEventListener('mouseleave', () => {
+      card.style.transform = "rotateX(0) rotateY(0) translateZ(0)";
+      shine.style.background = "none";
+    });
+  </script>
+</body>
+</html>
