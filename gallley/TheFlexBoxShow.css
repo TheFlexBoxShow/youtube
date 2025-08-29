@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1e1e2f, #121212);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.flex-container {
+  display: flex;
+  gap: 10px;
+  width: 80%;
+  height: 300px;
+}
+
+.flex-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: flex 0.6s ease, transform 0.6s ease, background 0.6s ease;
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.flex-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 0.6s ease;
+}
+
+.flex-item:nth-child(2) {
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+}
+.flex-item:nth-child(3) {
+  background: linear-gradient(135deg, #f7971e, #ffd200);
+}
+.flex-item:nth-child(4) {
+  background: linear-gradient(135deg, #654ea3, #eaafc8);
+}
+.flex-item:nth-child(5) {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+}
+
+.flex-item:hover {
+  flex: 3;
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.flex-item:hover img {
+  transform: scale(1.1);
+}
