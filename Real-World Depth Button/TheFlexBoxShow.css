@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(145deg, #141414, #0b0b0b);
+  font-family: "Poppins", sans-serif;
+}
+.real-btn {
+  font-size: 1.4em;
+  padding: 18px 60px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
+  color: #eaeaea;
+  box-shadow:
+    inset 3px 3px 6px rgba(255, 255, 255, 0.15),
+    inset -3px -3px 8px rgba(0, 0, 0, 0.8),
+    12px 14px 18px rgba(0, 0, 0, 0.7);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+.real-btn:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    inset 2px 2px 4px rgba(255, 255, 255, 0.15),
+    inset -2px -2px 6px rgba(0, 0, 0, 0.8),
+    20px 22px 25px rgba(0, 0, 0, 0.8);
+}
+.real-btn:active {
+  transform: translateY(3px);
+  box-shadow:
+    inset 4px 4px 8px rgba(0, 0, 0, 0.7),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.1);
+}
