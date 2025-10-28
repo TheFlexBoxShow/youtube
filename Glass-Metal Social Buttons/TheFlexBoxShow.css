@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at center, #1a1a1a, #0d0d0d);
+  font-family: "Poppins", sans-serif;
+}
+.social-container {
+  text-align: center;
+  color: #eee;
+}
+.social-container h2 {
+  margin-bottom: 40px;
+  font-weight: 500;
+  font-size: 2em;
+  letter-spacing: 1px;
+}
+.social-buttons {
+  display: flex;
+  gap: 35px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.social-buttons a{
+  text-decoration: none;
+}
+.social-btn {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #262626, #141414);
+  box-shadow:
+    inset 1px 1px 3px rgba(255,255,255,0.15),
+    inset -2px -2px 4px rgba(0,0,0,0.6),
+    10px 12px 18px rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  color: #ccc;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+  transform-style: preserve-3d;
+}
+.social-btn::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 80%;
+  height: 40%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent 80%);
+  border-radius: 20px;
+  pointer-events: none;
+  transform: rotateX(15deg);
+}
+.social-btn::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  width: 60%;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.35);
+  filter: blur(6px);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s;
+}
+.social-btn:hover {
+  transform: translateY(-8px) rotateX(12deg) rotateY(-8deg);
+  box-shadow:
+    inset 1px 1px 3px rgba(255,255,255,0.15),
+    inset -2px -2px 5px rgba(0,0,0,0.7),
+    20px 25px 30px rgba(0,0,0,0.8);
+  color: #fff;
+}
+.social-btn:hover::after {
+  opacity: 0.7;
+  transform: translateX(-50%) scale(0.8);
+}
+.facebook:hover { background: linear-gradient(145deg, #3b5998, #1d3557); }
+.instagram:hover { background: linear-gradient(145deg, #d6249f, #962fbf, #4f5bd5); }
+.youtube:hover { background: linear-gradient(145deg, #ff0000, #b30000); }
+.github:hover { background: linear-gradient(145deg, #333, #000); }
+.social-btn {
+  background-blend-mode: overlay;
+}
