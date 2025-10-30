@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background: radial-gradient(circle at 30% 30%, #1a1a1a, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  perspective: 800px;
+  font-family: "Poppins", sans-serif;
+}
+.real-glass-btn {
+  position: relative;
+  padding: 18px 70px;
+  border: none;
+  border-radius: 60px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+  backdrop-filter: blur(18px);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow:
+    inset 3px 3px 8px rgba(255,255,255,0.25),
+    inset -3px -3px 10px rgba(0,0,0,0.6),
+    0 8px 25px rgba(0,0,0,0.8);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.real-glass-btn .shine {
+  content: "";
+  position: absolute;
+  top: -80%;
+  left: -100%;
+  width: 250%;
+  height: 260%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.15) 35%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  transform: rotate(25deg);
+  transition: all 0.8s ease;
+  pointer-events: none;
+}
+.real-glass-btn .inner-shadow {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 60px;
+  background: radial-gradient(circle at 50% 30%, rgba(255,255,255,0.12), rgba(0,0,0,0.6) 70%);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+.real-glass-btn .label {
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+.real-glass-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow:
+    inset 2px 2px 6px rgba(255,255,255,0.25),
+    inset -4px -4px 12px rgba(0,0,0,0.6),
+    0 15px 35px rgba(0,0,0,0.9);
+}
+.real-glass-btn:active {
+  transform: translateY(1px) scale(0.97);
+  box-shadow:
+    inset 1px 1px 4px rgba(255,255,255,0.25),
+    inset -2px -2px 8px rgba(0,0,0,0.8),
+    0 5px 10px rgba(0,0,0,0.9);
+}
+.real-glass-btn:hover .shine {
+  left: 80%;
+  opacity: 1;
+}
