@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Floating Navbar</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="TheFlexBoxShow.css">
+</head>
+<body>
+  <div class="navbar">
+    <div class="nav-item active"><i class="fa-solid fa-house"></i></div>
+    <div class="nav-item"><i class="fa-solid fa-magnifying-glass"></i></div>
+    <div class="nav-item"><i class="fa-solid fa-bell"></i></div>
+    <div class="nav-item"><i class="fa-solid fa-heart"></i></div>
+    <div class="nav-item"><i class="fa-solid fa-user"></i></div>
+  </div>
+
+  <script>
+    const items = document.querySelectorAll(".nav-item");
+    items.forEach(item => {
+      item.addEventListener("click", () => {
+        items.forEach(el => el.classList.remove("active"));
+        item.classList.add("active");
+      });
+    });
+  </script>
+</body>
+</html>
